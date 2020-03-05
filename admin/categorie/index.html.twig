@@ -1,0 +1,42 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title 'Gestions des Ateliers' %}
+
+{% block body %}
+<div class='container mt-4'>
+
+<h2> Gérer les Ateliers </h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for atelier in lesateliers %}
+        <tr>
+            <td>{{ atelier.tittle }}</td>
+            <td>
+                <a href="{{ path('admin.atelier.edit',{id: atelier.id}) }}" class="btn btn-secondary">Editer</a>
+                
+                <form method="post" action="{{ path('admin.atelier.delete',{ id: atelier.id}) }}"  onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette catégorie ?')" style="display: inline-block">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ atelier.id) }}"/>
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class ="text-right">
+    <a href="{{path('admin.atelier.new')}}" class="btn btn-secondary">Ajouter un atelier</a>
+</div>
+</div>
+
+
+
+
+{% endblock %}

@@ -19,7 +19,7 @@
          sizes="100vw"
          alt="Retap ta récup à Podensac" ></a></div>
         <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-            <a class="navbar-brand" href={{path ("home") }}>Retap ta recup</a>
+            <a class="navbar-brand" href={{path ("home") }}>Retour site </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item ">
-                  <a class="nav-link{% if current_menu is defined and current_menu == 'properties' %} active {% endif %}"  href={{path ("cours.index") }}>Cours & stages<span class="sr-only">(current)</span></a>
+                  <a class="nav-link{% if current_menu is defined and current_menu == 'properties' %} active {% endif %}"  href={{path ("admin.cours.index") }}>Gestion des Cours<span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link{% if current_menu1 is defined and current_menu1 == 'ateliers' %} active {% endif %}" href="{{path ("presentation.index") }}">Les Ateliers</a>
+                  <a class="nav-link{% if current_menu1 is defined and current_menu1 == 'ateliers' %} active {% endif %}" href="{{path ("admin.atelier.index") }}">Gestion des Ateliers</a>
                 </li>
                
                 <li class="nav-item dropdown">
@@ -55,6 +55,7 @@
             </div>
           </nav>
           <div style="padding-bottom: 15px;")>
+            
         {% block body %}{% endblock %}
       </div>
       

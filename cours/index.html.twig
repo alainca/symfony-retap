@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+{% block title 'Les Cours et les stages'%}
+
+{% block body %}
+
+<div class="container ">
+<h21>L'ensemble de nos cours</h2>
+<div class="row flex">
+    {% for cours in lescours %}
+    <div class="col-4">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"style= "font-size: 20px;">
+                    <a href="{{ path ('cours.show',{id: cours.id})}}">{{ cours.title }}</a>
+                </h5>
+                <p class="card-text" style= "font-size: 15px;"> Durée: {{ cours.duree }} Public : {{ cours.public }}</p>
+                <div class="text-primary"style= "font-size: 13px;">{{ cours.tarifs | raw }}</div>
+            </div>
+        </div>
+        
+    </div> 
+    {% endfor %}   
+</div>
+</div>
+        
+{% endblock %}

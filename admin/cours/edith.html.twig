@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Modifier le cour</h2>
+   {{ include ('admin/cours/_form.html.twig',{form: form, button:'Enregistrer les mofifications'}) }}
+</div>
+{% endblock %}

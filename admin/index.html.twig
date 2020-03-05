@@ -1,0 +1,42 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title 'Gestions des Cours et des Stages' %}
+
+{% block body %}
+<div class='container mt-4'>
+
+<h2> Bienvenu dans l'administration du site </h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for cours in lescours %}
+        <tr>
+            <td>{{ cours.title }}</td>
+            <td>
+                <a href="{{ path('admin.cours.edit',{id: cours.id}) }}" class="btn btn-secondary">Editer</a>
+                
+                <form method="post" action="{{ path('admin.cours.delete',{ id: cours.id}) }}"  onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cet article ?')" style="display: inline-block">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ cours.id) }}"/>
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class ="text-right">
+    <a href="{{path('admin.cours.new')}}" class="btn btn-secondary">Créer un nouveau cours</a>
+</div>
+</div>
+
+
+
+
+{% endblock %}
