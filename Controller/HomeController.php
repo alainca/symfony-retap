@@ -1,22 +1,31 @@
 <?php
 namespace App\Controller;
+use App\Controller\CoursRepository;
+use App\Repository\CoursRepository as RepositoryCoursRepository;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\Routing\Annotation\Route;
 
-
-class HomeController extends AbstractController
+class HomeController
 {
-	/**
+    /**
+     * @var Environement
+     */
+    private $twig;
+
+    public function __construct(Environment $twig)
+    {
+        $this->twig = $twig;
+    }
+
+    public function index(): Response
+    {
+        return new Response( $this->twig->render ('pages/home.html.twig') );
+    }
+     /**
      * @Route("/", name="home")
+     * @param CoursRepository $repository
+     * @return Response
      */
 
-public function home(){
-	return $this->render('pages/home.html.twig',[ 'title'=> "Bienvenu sur Retap ta Recup"]);
-}
-
-
-
-
+   
 }
