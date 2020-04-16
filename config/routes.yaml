@@ -1,0 +1,19 @@
+
+
+
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+home:
+    path: /
+    controller: App\Controller\HomeController::index
+
+logout:
+ path: /logout
+
+
+ 
+
+ # app/config/routing.yaml
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yaml"
