@@ -1,0 +1,145 @@
+html, body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  display: table;
+  height: 100%;
+  width: 100%;
+
+}
+
+#contf {
+  display: flex;
+  margin-top: 10%;
+  height: auto;
+  background-color: #8ac798;
+
+ 
+
+}
+
+#contf div > * { /* Tous les éléments directement enfants de div */
+  margin: 10%;
+}
+
+footer {
+  display: table-row;
+  height: 1px;
+  background-color: #108b70;
+ 
+}
+
+footer div {
+  display:table-cell; /* Permet de mettre les div côte à côte en occupant toute la largeur du parent (le footer) */
+}
+
+#footerc {
+ 
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 1rem;
+    
+
+}
+
+#foot {
+  padding-right: 3rem;
+  padding-top: 3rem;
+  padding-left: 3rem;
+  padding-bottom: 3rem;
+  background-color: #8ac798;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+ 
+
+}
+
+#galerie{
+ 
+  
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin: auto;
+  padding: 1rem;
+ 
+  
+
+}
+
+.imagegal {
+  
+  width: 400px; 
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  
+  
+
+}
+
+.imagegalnull {
+ 
+  width: 150px; 
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  
+  
+
+}
+
+#espaces{
+ 
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: auto;
+    padding: 1rem;
+ 
+  
+
+}
+
+.espace {
+ 
+  
+  width: 400px; 
+  padding-right: 2rem;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  padding-bottom: 2rem;
+  margin-right: 2rem;
+  margin-left: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  background-color: #f6f0a1;
+  border-style: double;
+  border-color:#ef7444;
+
+}
+.espacestittle {
+  
+  color: #cb1723;
+  font-size: 30px;
+  font-family: 'Shadows Into Light', cursive, Arial;
+}
+
+ h1 {
+  color: #1e4e54;
+  font-family: 'Do Hyeon', sans-serif;
+  font-size: 30px;
+}
+
+h2 {
+  color: #1e4e54;
+  font-family: 'Shadows Into Light', cursive, Arial;
+  font-size: 32px;
+}
