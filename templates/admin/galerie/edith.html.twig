@@ -1,0 +1,8 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Modifier la galerie</h2>
+   {{ include ('admin/galerie/_form.html.twig',{form: form, button:'Enregistrer les mofifications'}) }}
+</div>
+{% endblock %}

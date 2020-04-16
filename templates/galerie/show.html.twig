@@ -1,0 +1,90 @@
+
+{% extends 'base.html.twig' %}
+{% block title galerie.title %}
+
+
+{% block body %}
+<div class "jumbotron">
+    
+        
+        <div class="col-12">
+            
+            <div class="row"> 
+                    
+            <div class="col-8" style=" padding-top:2rem;  padding-left:2rem; " > 
+                
+                <img src="http://www.retaptarecup.com/public/uploads/images/galerie/{{galerie.filename}}" alt="card-img-top" style="width: 100%; height:auto;">
+                
+                
+            </div> 
+                  
+            <div class="col-3" style=  "font-size: 25px; color:#f6f0a1;background-color: #eb5514; margin-top:1rem;  margin-right:2rem; margin-left:2rem; 
+            padding-top:2rem;padding-bottom:2rem;padding-left:2rem;padding-right:2rem;">{{ galerie.title }}
+            </div>  
+            <div class="col-12" style=" padding-top:2rem;  padding-left:2rem; margin:auto; text-align:center " > 
+            <div id:"galerie">
+                <div >
+                    {% if galerie.filename2 %}
+                    <a href="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename2 }}"target="_blank";> <img src="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename2 }}" class= "imagegal" > </a>
+                    {%else%}
+                    <img src="http://www.retaptarecup.com/public/img/picture.png"  class= "imagegalnull">
+                    {% endif %}
+
+                    {% if galerie.filename3 %}
+                    <a href="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename3 }}"target="_blank";> <img src="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename3 }}" class= "imagegal"  > </a>
+                    {%else%}
+                    <img src="http://www.retaptarecup.com/public/img/picture.png"  class= "imagegalnull">
+                    {% endif %}
+
+                    {% if galerie.filename4 %}
+                    <a href="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename4 }}"target="_blank";>  <img src="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename4 }}" class= "imagegal"  > </a>
+                    {%else%}
+                    <img src="http://www.retaptarecup.com/public/img/picture.png"  class= "imagegalnull">
+                    {% endif %}
+
+
+                    {% if galerie.filename5 %}
+                    <a href="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename5 }}"target="_blank";> <img src="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename5 }}" class= "imagegal"  > </a>
+                    {%else%}
+                    <img src="http://www.retaptarecup.com/public/img/picture.png"  class= "imagegalnull">
+                    {% endif %}
+
+
+                    {% if galerie.filename6 %}
+                    <a href="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename6 }}"target="_blank";><img src="http://www.retaptarecup.com/public/uploads/images/galerie/{{ galerie.filename6 }}" class= "imagegal"  > </a>
+                    {%else%}
+                    <img src="http://www.retaptarecup.com/public/img/picture.png"  class= "imagegalnull">
+                    {% endif %}
+                </div>
+            </div>
+        </div>  
+        </div>                
+
+        </div> 
+             
+                                
+                             
+            
+                <div class="col-12"style="font-size: 14px; color:#1f4f54;background-color: #f6f0a1;   margin-right:2rem; margin-left:2rem; 
+                padding-top:2rem;padding-bottom:2rem;padding-left:2rem;padding-right:2rem;">{{ galerie.description | raw }}
+                </div>
+                
+                
+                
+            
+                
+               
+
+        </div>
+                
+        
+                    
+    
+    
+
+
+    
+</div>
+
+
+{% endblock %}

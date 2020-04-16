@@ -1,0 +1,78 @@
+
+{% extends 'base.html.twig' %}
+{% block title cours.title %}
+
+
+{% block body %}
+<div class "jumbotron">
+    <div class="container" >
+        
+        <div class="col-12">
+            
+            <div class="row"> 
+                    
+            <div class="col-8" style=" padding-top:2rem;  padding-left:2rem; " > 
+                {% if cours.filename %}
+                <img src="http://www.retaptarecup.com/public/uploads/images/cours/{{cours.filename}}" alt="card-img-top" style="width: 100%; height:auto;">
+                {%else%}
+                <img src="http://www.retaptarecup.com/public/uploads/images/cours/empty.png" alt="card-img-top" style="width: 100%; height:auto;">
+                {% endif %}
+                
+            </div> 
+                  
+            <div class="col-4" style=  "font-size: 25px; color:#f6f0a1;background-color: #eb5514; margin-top:1rem;  margin-right:2rem; margin-left:2rem; 
+            padding-top:2rem;padding-bottom:2rem;padding-left:2rem;padding-right:2rem;">{{ cours.title }}
+            </div>  
+        </div>                
+
+        </div> 
+             
+                                
+                             
+            <div class="col-12" style="font-size: 15px; color:#1f2d2c;background-color: #ee743e; margin-top:1rem; margin-bottom:1rem; margin-right:2rem; 
+                                    padding-top:1rem;padding-bottom:1rem;padding-left:1rem;padding-right:1rem;">Caractéristiques
+            </div> 
+        <div class="row">
+                                
+                                <div class="col-6">
+                                    <div class="row" style="font-size: 15px; color:#108a71;background-color: #8ac798; margin-top:1rem; margin-bottom:1rem; margin-left:2rem; 
+                                    padding-top:1rem;padding-bottom:1rem;padding-left:1rem;padding-right:1rem;">
+                                        <div class="col-12" >Durée du cours: {{ cours.duree }}</div>
+                                        <div class="col-12">Type de public: {{ cours.public }}</div>  
+                                    </div>
+                                </div>
+                <div class ="col-6" > 
+                    <div style="font-size: 15px; color:#1b4c51;background-color: #52adab; margin-top:1rem; margin-bottom:1rem; 
+                                    padding-top:1rem;padding-bottom:1rem;padding-left:1rem;padding-right:1rem;"> {{ cours.tarifs | raw}}
+                    </div>
+                </div>
+            </div>
+            
+                <div class="col-12" style="font-size: 16px; font-style: bold; color:#1f2d2c;background-color: #ee743e; margin-top:1rem; margin-bottom:1rem; margin-right:2rem; margin-left:2rem; 
+                        padding-top:1rem;padding-bottom:1rem;padding-left:1rem;padding-right:1rem;">Description du cours
+                </div>
+                <div class="col-12"style="font-size: 14px; color:#1f4f54;background-color: #f6f0a1;   margin-right:2rem; margin-left:2rem; 
+                padding-top:2rem;padding-bottom:2rem;padding-left:2rem;padding-right:2rem;">{{ cours.description | raw }}
+                </div>
+                <a href  "#" class= "col-12" style="margin-right:2rem; margin-left:2rem; margin-bottom:1rem; padding-top:1rem;padding-bottom:0rem;padding-left:2rem;padding-right:2rem;background: #d34836; color:#fff;" >Voir les sessions programmées </a>
+                
+                <a href = {{path ("contact")}} class= "col-12" style="margin-right:2rem; margin-left:2rem; margin-bottom:1rem; padding-top:1rem;padding-bottom:0rem;padding-left:2rem;padding-right:2rem;background: #d34836; color:#fff;" >Cliquez ici pour réserver ou vous renseigner sur une session de formation</a>
+                
+                
+            </div>
+                
+               
+
+        </div>
+                
+        
+                    
+    
+    </div>
+
+
+    
+</div>
+
+
+{% endblock %}

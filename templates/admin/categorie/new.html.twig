@@ -1,0 +1,8 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Ajouter un Atelier</h2>
+   {{ include ('admin/categorie/_form.html.twig',{form: form, button:'Ajouter l\'atelier'}) }}
+</div>
+{% endblock %}

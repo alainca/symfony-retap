@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+{% block title 'Retap ta Recup - stages de bricolage à Podensac - Gironde'%}
+
+{% block body %}
+
+<div class=" container jumbotron ">
+     
+     
+    {% for home in leshomes %}
+    <img src="http://www.retaptarecup.com/public/uploads/images/home/{{home.fileName}}" alt="card-img-top" style="width: 100%; height:auto;">
+<div class ="text-center"><h1>{{ home.tittle }}</h1></div>
+<p>{{ home.text |raw}}  </p>
+{% endfor %}
+</div>
+
+
+    
+{% endblock %}
+

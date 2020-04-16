@@ -1,0 +1,34 @@
+
+    {{ form_start(form)}}
+    <div class="row"> 
+        <div class="col-md-12">{{form_row(form.title)}}</div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-12">{{form_row(form.description)}}</div>
+    </div>
+    
+    <div class="row"> 
+        <div class="col-md-6">{{form_row(form.imageFile)}}</div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-6">{{form_row(form.imageFile2)}}</div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-6">{{form_row(form.imageFile3)}}</div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-6">{{form_row(form.imageFile4)}}</div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-6">{{form_row(form.imageFile5)}}</div>
+    </div>
+    <div class="row"> 
+        <div class="col-md-6">{{form_row(form.imageFile6)}}</div>
+    </div>
+
+
+    
+    {{ form_widget(form)}}
+    <button class="btn btn-primary">{{ button|default('Enregistrer')}}</button>
+
+    {{ form_end (form)}}

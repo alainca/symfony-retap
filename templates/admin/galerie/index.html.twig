@@ -1,0 +1,42 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title 'Gestions des galeries' %}
+
+{% block body %}
+<div class='container mt-4'>
+
+<h2> Gérer les galeries </h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for galerie in lesgaleries %}
+        <tr>
+            <td>{{ galerie.title }}</td>
+            <td>
+                <a href="{{ path('admin.galerie.edit',{id: galerie.id}) }}" class="btn btn-secondary">Editer</a>
+                
+                <form method="post" action="{{ path('admin.galerie.delete',{ id: galerie.id}) }}"  onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette galerie ?')" style="display: inline-block">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ galerie.id) }}"/>
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class ="text-right">
+    <a href="{{path('admin.galerie.new')}}" class="btn btn-secondary">Créer une nouvelle galerie</a>
+</div>
+</div>
+
+
+
+
+{% endblock %}

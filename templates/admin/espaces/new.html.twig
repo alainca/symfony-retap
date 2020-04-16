@@ -1,0 +1,8 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Ajouter un Espace d'atelier</h2>
+   {{ include ('admin/espaces/_form.html.twig',{form: form, button:'Ajouter l\'espace d\'atelier'}) }}
+</div>
+{% endblock %}

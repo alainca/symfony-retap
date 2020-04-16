@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+{% block title 'Les Cours et les stages'%}
+
+{% block body %}
+
+<div class="container ">
+<h2>L'ensemble de nos cours</h2>
+<div class="row flex">
+    {% for cours in lescours %}
+    <div class="col-4">
+        <div  style="border: double; border-color:#52adab;  margin-bottom: 2rem;">
+            {% if cours.filename %}
+            <img src="http://www.retaptarecup.com/public/uploads/images/cours/{{cours.filename}}" alt="card-img-top" style="width: 100%; height:auto; ">
+             {%else%}
+             <img src="http://www.retaptarecup.com/public/uploads/images/cours/empty.png" alt="card-img-top" style="width: 100%; height:auto;">
+            {% endif %}
+            <div class="card-body">
+                <h5 style= "font-size: 20px;color:#1e4e54;font-family: 'Do Hyeon', sans-serif;">
+                    <a href="{{ path ('cours.show',{id: cours.id})}}">{{ cours.title }}</a>
+                </h5>
+                <p  style= "font-size: 15px;"> Durée: {{ cours.duree }} Public : {{ cours.public }}</p>
+                <div style= "font-size: 13px;">{{ cours.tarifs | raw }}</div>
+            </div>
+        </div>
+        
+    </div> 
+    {% endfor %}   
+</div>
+</div>
+        
+{% endblock %}

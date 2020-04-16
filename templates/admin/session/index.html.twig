@@ -1,0 +1,46 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block title 'Gestions des Sessions' %}
+
+{% block body %}
+<div class='container mt-4'>
+
+<h2> Gérer les sessions </h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Atelier</th>
+            <th>Effectif</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for session in lessessions %}
+        <tr>
+            <td>{{ session.date | date ('d/m/Y à H:1')}}</td>
+            <td>{{ session.cours.title}}</td>
+            <td>{{ session.effectif}} personnes</td>
+            <td>
+                <a href="{{ path('admin.session.edit',{id: session.id}) }}" class="btn btn-secondary">Editer</a>
+                
+                <form method="post" action="{{ path('admin.session.delete',{ id: session.id}) }}"  onsubmit="return confirm('Êtes-vous sûr de vouloir supprimer cette session ?')" style="display: inline-block">
+                    <input type="hidden" name="_method" value="DELETE">
+                    <input type="hidden" name="_token" value="{{ csrf_token('delete' ~ session.id) }}"/>
+                    <button class="btn btn-danger">Supprimer</button>
+                </form>
+            </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<div class ="text-right">
+    <a href="{{path('admin.session.new')}}" class="btn btn-secondary">Ajouter une session</a>
+</div>
+</div>
+
+
+
+
+{% endblock %}

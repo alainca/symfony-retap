@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title 'Les sessions programmées de Retap ta recup' %}
+
+{% block body %}
+<div class='container mt-4'>
+
+<h2> Liste des sessions programmées</h2>
+<table class ="table table-striped">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Atelier</th>
+            <th>Effectif</th>
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for session in lessessions %}
+        <tr>
+            <td>{{ session.date | date ('d/m/Y à H:1')}}</td>
+            <td>{{ session.cours.title}}</td>
+            <td>{{ session.effectif}} personnes</td>
+          
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<a href = {{path ("contact")}} class= "col-12" style="margin-right:2rem; margin-left:2rem; margin-bottom:1rem; padding-top:1rem;padding-bottom:0rem;padding-left:2rem;padding-right:2rem;background: #d34836; color:#fff;" >Cliquez ici pour réserver ou vous renseigner sur une session de formation</a>
+
+</div>
+
+
+
+
+{% endblock %}

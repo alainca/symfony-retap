@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+{% block title 'Les ateliers de Retap ta Recup'%}
+
+{% block body %}
+
+ <div class "jumbotron"  >
+    <div class="col-12"style="margin:auto;" > 
+   <div class="row" > 
+
+
+   {% for espaces in lesespaces %}
+
+   <div class= "espace">
+   <div class="espacestittle">{{ espaces.tittle }} </div>
+   <p>{{ espaces.text |raw}}  </p>
+</div>
+
+   {% endfor %}
+
+</div>   
+</div>
+</div>
+
+
+{% endblock %}

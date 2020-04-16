@@ -1,0 +1,8 @@
+{% extends 'baseadmin.html.twig' %}
+
+{% block body %}
+<div class="container mt-4">
+    <h2>Modifier le texte d'accueil</h2>
+   {{ include ('admin/espaces/_form.html.twig',{form: form, button:'Enregistrer les mofifications'}) }}
+</div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+{% block title 'Les Cours et les stages'%}
+
+{% block body %}
+
+<div class="container ">
+<h2>Les galeries</h2>
+<div class="row flex">
+    {% for galerie in lesgaleries %}
+    <div class="col-4">
+        <div class="card">
+           
+            <img src="http://www.retaptarecup.com/public//uploads/images/galerie/{{galerie.filename}}" alt="card-img-top" style="width: 100%; height:auto;">
+             
+            <div class="card-body">
+                <h5 class="card-title"style= "font-size: 20px;">
+                    <a href="{{ path ('galerie.show',{id: galerie.id})}}">{{ galerie.title }}</a>
+                </h5>
+                
+            </div>
+        </div>
+        
+    </div> 
+    {% endfor %}   
+</div>
+</div>
+        
+{% endblock %}
